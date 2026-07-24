@@ -1171,3 +1171,74 @@ nav a.bouton:hover {
   .membre-photo { height: 390px; }
   .equipe-contact .cta-principal { width: 100%; }
 }
+
+
+
+/* =========================
+   CARTE DE LOCALISATION
+   ========================= */
+
+.contact-map {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 30px;
+}
+
+.map-heading {
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+.map-heading .section-label {
+    margin-bottom: 10px;
+    color: #2d86ad;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.map-heading h2 {
+    margin: 0 0 15px;
+    color: #173e5b;
+    font-size: 2.5rem;
+}
+
+.map-heading p {
+    color: #587086;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.map-wrapper {
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(23, 62, 91, 0.15);
+}
+
+.map-wrapper iframe {
+    display: block;
+    width: 100%;
+    height: 450px;
+    border: 0;
+}
+
+/* Adaptation pour les téléphones */
+
+@media (max-width: 700px) {
+    .contact-map {
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+
+    .map-heading h2 {
+        font-size: 2rem;
+    }
+
+    .map-wrapper {
+        border-radius: 20px;
+    }
+
+    .map-wrapper iframe {
+        height: 350px;
+    }
+}
