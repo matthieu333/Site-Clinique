@@ -1107,6 +1107,11 @@ nav a.bouton:hover {
   background: linear-gradient(135deg, #eaf5fb, #f8fcff);
 }
 
+.equipe-contact .galerie-surtitre {
+  font-size: 18px !important;
+  letter-spacing: 0.12em;
+}
+
 .equipe-contact h2 {
   margin: 6px 0 0;
   color: #163d59;
