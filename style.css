@@ -323,43 +323,21 @@ nav a.actif::after {
 
 .hero-galia {
   position: relative;
-  align-self: stretch;
-  min-height: 500px;
-}
-
-.hero-galia::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: -14px 18px 18px -14px;
-  border: 2px solid rgba(47, 130, 169, .2);
-  border-radius: 30px 30px 75px 30px;
+  align-self: center;
+  justify-self: end;
+  width: 100%;
+  max-width: 370px;
+  padding: 8px;
+  border-radius: 28px 28px 62px 28px;
+  background: #fff;
+  box-shadow: 0 20px 45px rgba(20, 65, 92, .18);
 }
 
 .hero-galia img {
-  width: 100%;
-  height: 100%;
-  min-height: 500px;
   display: block;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 26px 26px 70px 26px;
-  box-shadow: 0 22px 50px rgba(20, 65, 92, .2);
-}
-
-.hero-galia span {
-  position: absolute;
-  right: 18px;
-  bottom: 18px;
-  padding: 11px 16px;
-  border: 1px solid rgba(255,255,255,.65);
-  border-radius: 999px;
-  color: #174a68;
-  background: rgba(255,255,255,.9);
-  box-shadow: 0 8px 20px rgba(20,65,92,.16);
-  font-size: 13px;
-  font-weight: 700;
-  backdrop-filter: blur(8px);
+  width: 100%;
+  height: auto;
+  border-radius: 21px 21px 54px 21px;
 }
 
 @media (max-width: 850px) {
@@ -371,64 +349,27 @@ nav a.actif::after {
   .accueil .hero .services-rapides,
   .accueil .hero .hero-actions,
   .accueil .hero .hero-atouts { justify-content: center; }
-  .hero-galia { min-height: 420px; }
-  .hero-galia img { min-height: 420px; max-height: 520px; }
 }
 
-/* Ajustement du portrait de Galia */
 .accueil .hero {
   grid-template-columns: minmax(0, 1.2fr) minmax(290px, .8fr);
   gap: clamp(42px, 5vw, 65px);
   padding: 48px;
 }
 
-.hero-galia {
-  align-self: center;
-  width: 100%;
-  max-width: 370px;
-  height: 440px;
-  min-height: 0;
-  justify-self: end;
-  padding: 8px;
-  border-radius: 28px 28px 62px 28px;
-  background: #fff;
-  box-shadow: 0 20px 45px rgba(20, 65, 92, .18);
-}
-
-.hero-galia::before {
-  display: none;
-}
-
-.hero-galia img {
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  border-radius: 21px 21px 54px 21px;
-  object-position: center 48%;
-  box-shadow: none;
-}
-
-.hero-galia span {
-  right: 22px;
-  bottom: 22px;
-  padding: 9px 13px;
-  font-size: 12px;
-}
-
 @media (max-width: 850px) {
-  .accueil .hero { padding: 35px 25px; }
+  .accueil .hero {
+    grid-template-columns: 1fr;
+    padding: 35px 25px;
+  }
   .hero-galia {
     width: min(100%, 390px);
-    height: 470px;
-    min-height: 0;
     justify-self: center;
   }
-  .hero-galia img { min-height: 0; max-height: none; }
 }
 
 @media (max-width: 480px) {
   .accueil .hero { padding: 30px 16px; }
-  .hero-galia { height: 420px; }
 }
 
 .horaires {
@@ -809,9 +750,9 @@ nav a.bouton:hover {
 
 .photo-accueil {
   width: 100%;
-  height: 510px;
+  height: auto;
+  display: block;
   margin: 0;
-  object-fit: cover;
   border-radius: 32px 32px 90px 32px;
   box-shadow: 0 24px 55px rgba(20, 65, 92, 0.2);
 }
@@ -883,8 +824,7 @@ nav a.bouton:hover {
 
 .galerie-mosaique {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  grid-template-rows: repeat(2, 255px);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   gap: 16px;
   margin-top: 30px;
 }
@@ -892,11 +832,11 @@ nav a.bouton:hover {
 .galerie-cadre {
   position: relative;
   overflow: hidden;
-  min-height: 0;
+  align-self: start;
   margin: 0;
   border: 5px solid #fff;
   border-radius: 24px;
-  background: #dbe8ef;
+  background: #fff;
   box-shadow: 0 14px 35px rgba(20, 65, 92, 0.14);
 }
 
@@ -906,23 +846,9 @@ nav a.bouton:hover {
 }
 
 .galerie-cadre img {
-  width: 100%;
-  height: 100%;
   display: block;
-  object-fit: cover;
-  transition: transform 0.45s ease;
-}
-
-.galerie-principal img {
-  object-position: center 42%;
-}
-
-.galerie-principal img.photo-equipe-3 {
-  object-position: center calc(42% - 60px);
-}
-
-.galerie-cadre:hover img {
-  transform: scale(1.035);
+  width: 100%;
+  height: auto;
 }
 
 .galerie-cadre::after {
@@ -971,11 +897,9 @@ nav a.bouton:hover {
 }
 
 .equipe-apercu-photo img {
-  width: 100%;
-  height: 390px;
   display: block;
-  object-fit: cover;
-  object-position: center 38%;
+  width: 100%;
+  height: auto;
   border-radius: 22px 22px 65px 22px;
 }
 
@@ -1024,12 +948,16 @@ nav a.bouton:hover {
   line-height: 1.7;
 }
 
-.equipe-hero-photo img {
+.equipe-hero-photo {
+  justify-self: end;
   width: 100%;
-  height: 500px;
+  max-width: 480px;
+}
+
+.equipe-hero-photo img {
   display: block;
-  object-fit: cover;
-  object-position: center 35%;
+  width: 100%;
+  height: auto;
   border-radius: 32px 32px 90px 32px;
   box-shadow: 0 24px 55px rgba(20, 65, 92, 0.2);
 }
@@ -1047,6 +975,7 @@ nav a.bouton:hover {
 .membres-grille {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: start;
   gap: 22px;
 }
 
@@ -1064,13 +993,14 @@ nav a.bouton:hover {
   box-shadow: 0 20px 42px rgba(20, 65, 92, 0.16);
 }
 
-.membre-photo { height: 390px; overflow: hidden; }
+.membre-photo {
+  overflow: hidden;
+}
 
 .membre-photo img {
-  width: 100%;
-  height: 100%;
   display: block;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
 }
 
 .membre-infos { padding: 22px 24px 25px; }
@@ -1128,7 +1058,7 @@ nav a.bouton:hover {
   .hero { grid-template-columns: 1fr; gap: 48px; }
   .accueil h1 { font-size: clamp(42px, 13vw, 58px); }
   .accueil .hero-texte { font-size: 16px; }
-  .photo-accueil { height: 390px; border-radius: 24px 24px 60px 24px; }
+  .photo-accueil { border-radius: 24px 24px 60px 24px; }
   .badge-photo { left: 14px; bottom: 16px; }
   .equipe-apercu { grid-template-columns: 1fr; padding: 20px; }
   .equipe-apercu-contenu { padding: 5px 5px 15px; }
@@ -1136,29 +1066,47 @@ nav a.bouton:hover {
   .galerie-entete { display: block; }
   .galerie-entete > p { margin-top: 14px; }
   .galerie-mosaique {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 350px 260px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: none;
   }
   .galerie-principal {
-    grid-column: 1 / 3;
+    grid-column: auto;
     grid-row: auto;
     border-radius: 24px 24px 24px 55px;
   }
   .horaires { margin-top: 60px; }
   .equipe-page { padding: 46px 20px 60px; }
   .equipe-hero { grid-template-columns: 1fr; }
-  .equipe-hero-photo img { height: 430px; }
+  .equipe-hero-photo { justify-self: center; }
   .membres { margin-top: 75px; }
   .membres-grille { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
-  .membre-photo { height: 480px; }
   .equipe-contact { align-items: flex-start; flex-direction: column; padding: 28px; }
 }
 
 @media (max-width: 480px) {
-  header { display: block; }
+  header { display: block; padding: 14px clamp(12px, 4vw, 18px); }
   .identite-header { display: none; }
-  nav { justify-content: center; }
-  nav a.bouton { margin-left: 0; }
+  nav {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 280px);
+    min-height: 44px;
+    padding: 10px 16px;
+    text-align: center;
+    line-height: 1.25;
+  }
+  nav a.bouton { order: 0; margin-left: 0; }
+  .accueil { padding: 36px 14px 50px; }
+  .accueil .hero { padding: 28px 14px; }
+  .accueil h1 { font-size: clamp(34px, 11vw, 48px); }
   .hero-actions a { width: 100%; }
   .hero-atouts { flex-direction: column; gap: 8px; }
   .galerie-mosaique {
@@ -1167,13 +1115,15 @@ nav a.bouton:hover {
   }
   .galerie-cadre,
   .galerie-principal {
-    height: 320px;
     border-radius: 20px;
   }
   .galerie-cadre figcaption { padding: 18px; }
-  .equipe-apercu-photo img { height: 330px; }
-  .equipe-hero-photo img { height: 350px; border-radius: 24px 24px 60px 24px; }
-  .membre-photo { height: 390px; }
+  .equipe-page { padding: 36px 14px 50px; }
+  .equipe-hero { gap: 32px; }
+  .equipe-hero h1 { font-size: clamp(34px, 11vw, 44px); }
+  .equipe-hero-photo img { border-radius: 24px 24px 60px 24px; }
+  .membre-infos { padding: 20px; }
+  .equipe-contact { padding: 24px 20px; }
   .equipe-contact .cta-principal { width: 100%; }
 }
 
