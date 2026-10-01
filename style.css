@@ -301,14 +301,23 @@ nav a.actif::after {
   .categorie-titre h2 { font-size:24px; }
 }
 
-/* Photo Galia dans l'introduction de l'accueil */
+/* Les trois photos entourent le message principal sans recadrage. */
 .accueil .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+  grid-template-columns: minmax(170px, .7fr) minmax(0, 1.55fr) minmax(190px, .78fr);
+  grid-template-areas:
+    "belle contenu principale"
+    "portrait contenu principale";
   align-items: center;
-  gap: clamp(40px, 6vw, 75px);
+  column-gap: clamp(20px, 3vw, 38px);
+  row-gap: 20px;
   max-width: none;
   text-align: left;
+  padding: 48px;
+}
+
+.accueil .hero-contenu {
+  grid-area: contenu;
 }
 
 .accueil .hero-texte {
@@ -321,47 +330,63 @@ nav a.actif::after {
   justify-content: flex-start;
 }
 
-.hero-galia {
+.hero-galia,
+.hero-animal {
   position: relative;
   align-self: center;
-  justify-self: end;
   width: 100%;
-  max-width: 370px;
   padding: 8px;
-  border-radius: 28px 28px 62px 28px;
+  border-radius: 24px;
   background: #fff;
   box-shadow: 0 20px 45px rgba(20, 65, 92, .18);
 }
 
-.hero-galia img {
+.hero-galia {
+  grid-area: principale;
+  justify-self: end;
+  max-width: 290px;
+  border-radius: 28px 28px 62px 28px;
+}
+
+.hero-belle {
+  grid-area: belle;
+  align-self: end;
+  transform: rotate(-2deg);
+}
+
+.hero-galia-portrait {
+  grid-area: portrait;
+  align-self: start;
+  transform: rotate(2deg);
+}
+
+.hero-galia img,
+.hero-animal img {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 17px;
+}
+
+.hero-galia img {
   border-radius: 21px 21px 54px 21px;
 }
 
 @media (max-width: 850px) {
   .accueil .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "contenu contenu"
+      "belle portrait"
+      "principale principale";
+    gap: 24px;
+    padding: 35px 25px;
     text-align: center;
   }
   .accueil .hero-texte { margin-right: auto; margin-left: auto; }
   .accueil .hero .services-rapides,
   .accueil .hero .hero-actions,
   .accueil .hero .hero-atouts { justify-content: center; }
-}
-
-.accueil .hero {
-  grid-template-columns: minmax(0, 1.2fr) minmax(290px, .8fr);
-  gap: clamp(42px, 5vw, 65px);
-  padding: 48px;
-}
-
-@media (max-width: 850px) {
-  .accueil .hero {
-    grid-template-columns: 1fr;
-    padding: 35px 25px;
-  }
   .hero-galia {
     width: min(100%, 390px);
     justify-self: center;
@@ -369,7 +394,22 @@ nav a.actif::after {
 }
 
 @media (max-width: 480px) {
-  .accueil .hero { padding: 30px 16px; }
+  .accueil .hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "belle"
+      "contenu"
+      "principale"
+      "portrait";
+    gap: 28px;
+    padding: 30px 16px;
+  }
+
+  .hero-galia,
+  .hero-animal {
+    width: min(100%, 390px);
+    justify-self: center;
+  }
 }
 
 .horaires {
